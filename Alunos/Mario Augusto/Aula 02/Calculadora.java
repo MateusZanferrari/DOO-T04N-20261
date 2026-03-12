@@ -1,5 +1,3 @@
-package calculadora;
-
 import java.util.Scanner;
 
 public class Calculadora {
@@ -31,27 +29,33 @@ public class Calculadora {
             opcao = scanner.nextInt();
 
             switch (opcao) {
+
                 case 1:
                     System.out.println("\n--- Calcular Preço Total ---");
                     System.out.print("Digite a quantidade de plantas: ");
                     int quantidade = scanner.nextInt();
+
                     System.out.print("Digite o preço unitário (R$): ");
                     double precoUnitario = scanner.nextDouble();
 
                     double precoTotal = calcularPrecoTotal(quantidade, precoUnitario);
+
                     System.out.printf("Preço Total: R$ %.2f%n", precoTotal);
                     break;
 
                 case 2:
                     System.out.println("\n--- Calcular Troco ---");
+
                     System.out.print("Digite o valor recebido (R$): ");
                     double valorRecebido = scanner.nextDouble();
+
                     System.out.print("Digite o valor total da compra (R$): ");
                     double valorTotal = scanner.nextDouble();
 
                     double troco = calcularTroco(valorRecebido, valorTotal);
+
                     if (troco < 0) {
-                        System.out.printf("Valor insuficiente! Faltam R$ %.2f.%n", Math.abs(troco));
+                        System.out.printf("Valor insuficiente! Faltam R$ %.2f%n", Math.abs(troco));
                     } else {
                         System.out.printf("Troco: R$ %.2f%n", troco);
                     }
@@ -59,11 +63,11 @@ public class Calculadora {
 
                 case 3:
                     System.out.println("\nObrigado por usar a calculadora da Dona Gabrielinha!");
-                    System.out.println("Volte sempre! ");
+                    System.out.println("Volte sempre!");
                     break;
 
                 default:
-                    System.out.println("Opção inválida! Por favor, escolha 1, 2 ou 3.");
+                    System.out.println("Opção inválida! Escolha 1, 2 ou 3.");
             }
 
         } while (opcao != 3);
